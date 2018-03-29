@@ -17,22 +17,22 @@ while True:
     data = conn.recv(4096)
     print('Server received', repr(data))
 
-    filename='my.txt'
+    '''filename='my.txt'
     f = open(filename,'rb')
     l = f.read(4096)
     while (l):
        conn.send(l)
        print('Sent ',repr(l))
        l = f.read(4096)
-    f.close()
+    f.close()'''
     #filename = "images2/" + strftime("%Y-%m-%d %H:%M:%S", gmtime()) + ".jpg"
     #f = open(filename,'wb')
     #data = s.recv(1024)
-    f = open(filename,'wb')
+    f = open("my.jpg",'wb')
     f.write(data)
     print("File saved")
     f.close()
-    conn.send("Done")
+    conn.send("Done writing")
     print("Sent back")
     #print('Done sending')
     #conn.send('Thank you for connecting')

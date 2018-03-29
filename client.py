@@ -9,7 +9,7 @@ filename='images/2018-03-29 15:09:26.jpg'
 blob_value = open(filename,'rb').read()
 s.send(blob_value)
 
-with open('received_file', 'wb') as f:
+'''with open('received_file', 'wb') as f:
     print 'file opened'
     while True:
         print('receiving data...')
@@ -18,9 +18,9 @@ with open('received_file', 'wb') as f:
         if not data:
             break
         # write data to a file
-        f.write(data)
+        f.write(data)'''
 
-f.close()
-print('Successfully sent the file')
+#f.close()
+print('Successfully sent the file',s.recv(4096))
 s.close()
 print('connection closed')
