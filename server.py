@@ -32,4 +32,4 @@ while True:
     f.close()
     #print('Done sending')
     #conn.send('Thank you for connecting')
-    conn.close()
+    #conn.close()
