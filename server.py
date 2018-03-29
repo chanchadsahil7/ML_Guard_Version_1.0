@@ -25,7 +25,7 @@ while True:
        print('Sent ',repr(l))
        l = f.read(1024)'''
     filename = "images2/" + strftime("%Y-%m-%d %H:%M:%S", gmtime()) + ".jpg"
-    f = open(filename,'rb')
+    f = open(filename,'wb')
     #data = s.recv(1024)
     f.write(data)
     print("File saved")

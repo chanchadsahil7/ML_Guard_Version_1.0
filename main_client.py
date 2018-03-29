@@ -8,14 +8,9 @@ import os
 import MySQLdb
 import socket
 bot = telepot.Bot('514668041:AAGf5C4tA9qMSjUoXfPUbJdo1mRgNzj_-7Q')
-
+s = 0
 def sendImage(filename):
                      # Import socket module
-    s = socket.socket()             # Create a socket object
-    host = '107.180.71.58'     # Get local machine name
-    port = 8000                    # Reserve a port for your service.
-    #s.bind((host, port))
-    s.connect((host, port))
     s.send("Hello Sever")
 
     '''with open('received_file', 'wb') as f:
@@ -61,6 +56,11 @@ class MyHandler(PatternMatchingEventHandler):
         self.process(event)
 
 if __name__ == '__main__':
+    s = socket.socket()             # Create a socket object
+    host = '107.180.71.58'     # Get local machine name
+    port = 8000                    # Reserve a port for your service.
+    #s.bind((host, port))
+    s.connect((host, port))
     args = sys.argv[1:]
     observer = Observer()
     observer.schedule(MyHandler(), path=args[0] if args else 'images/')
