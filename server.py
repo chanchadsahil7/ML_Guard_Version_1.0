@@ -7,7 +7,7 @@ s = socket.socket()             # Create a socket object
 host = socket.gethostname()     # Get local machine name
 s.bind((host, port))            # Bind to the port
 s.listen(5)                     # Now wait for client connection.
-
+print(socket.gethostname())
 print 'Server listening....'
 
 while True:
