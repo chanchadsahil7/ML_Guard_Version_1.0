@@ -13,7 +13,7 @@ with open('received_file', 'wb') as f:
     print 'file opened'
     while True:
         print('receiving data...')
-        data = s.recv(1024)
+        data = s.recv(4096)
         print('data=%s', (data))
         if not data:
             break

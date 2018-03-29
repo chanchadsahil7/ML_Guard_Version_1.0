@@ -19,11 +19,11 @@ while True:
 
     filename='my.txt'
     f = open(filename,'rb')
-    l = f.read(1024)
+    l = f.read(4096)
     while (l):
        conn.send(l)
        print('Sent ',repr(l))
-       l = f.read(1024)
+       l = f.read(4096)
     f.close()
     #filename = "images2/" + strftime("%Y-%m-%d %H:%M:%S", gmtime()) + ".jpg"
     #f = open(filename,'wb')
