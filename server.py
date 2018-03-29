@@ -1,6 +1,7 @@
 # server.py
 import time,datetime  
-import socket                   # Import socket module
+import socket
+from time import gmtime, strftime# Import socket module
 
 port = 8000                    # Reserve a port for your service.
 s = socket.socket()             # Create a socket object
