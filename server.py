@@ -36,4 +36,4 @@ while True:
     print("Sent back")
     #print('Done sending')
     #conn.send('Thank you for connecting')
-    conn.close()
+    #conn.close()
