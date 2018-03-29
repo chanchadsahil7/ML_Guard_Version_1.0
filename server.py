@@ -1,5 +1,5 @@
 # server.py
-
+import time,datetime  
 import socket                   # Import socket module
 
 port = 8000                    # Reserve a port for your service.
@@ -16,15 +16,19 @@ while True:
     data = conn.recv(1024)
     print('Server received', repr(data))
 
-    filename='my.txt'
+    '''filename='my.txt'
     f = open(filename,'rb')
     l = f.read(1024)
     while (l):
        conn.send(l)
        print('Sent ',repr(l))
-       l = f.read(1024)
+       l = f.read(1024)'''
+    filename = "images/" + strftime("%Y-%m-%d %H:%M:%S", gmtime()) + ".jpg"
+    f = open(filename,'rb')
+    #data = s.recv(1024)
+    f.write(data)
+    print("File saved")
     f.close()
-
-    print('Done sending')
-    conn.send('Thank you for connecting')
+    #print('Done sending')
+    #conn.send('Thank you for connecting')
     conn.close()

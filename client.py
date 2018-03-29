@@ -7,7 +7,7 @@ port = 8000                    # Reserve a port for your service.
 s.connect((host, port))
 s.send("Hello server!")
 
-with open('received_file', 'wb') as f:
+'''with open('received_file', 'wb') as f:
     print 'file opened'
     while True:
         print('receiving data...')
@@ -16,9 +16,9 @@ with open('received_file', 'wb') as f:
         if not data:
             break
         # write data to a file
-        f.write(data)
+        f.write(data)'''
 
 f.close()
-print('Successfully get the file')
+print('Successfully sent the file')
 s.close()
 print('connection closed')
