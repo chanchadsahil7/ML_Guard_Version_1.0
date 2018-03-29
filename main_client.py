@@ -11,7 +11,7 @@ bot = telepot.Bot('514668041:AAGf5C4tA9qMSjUoXfPUbJdo1mRgNzj_-7Q')
 s = 0
 def sendImage(filename):
                      # Import socket module
-    s.send("Hello Sever")
+    s.send(filename)
 
     '''with open('received_file', 'wb') as f:
         print 'file opened'
@@ -26,7 +26,6 @@ def sendImage(filename):
 
     #f.close()
     print('Successfully sent the file')
-    s.close()
     print('connection closed')
     
 
@@ -70,6 +69,7 @@ if __name__ == '__main__':
         while True:
             time.sleep(1)
     except KeyboardInterrupt:
+        s.close()
         observer.stop()
 
     observer.join()
