@@ -22,5 +22,5 @@ s.send(blob_value)
 
 #f.close()
 print('Successfully sent the file',s.recv(4096))
-s.close()
+#s.close()
 print('connection closed')
