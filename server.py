@@ -1,14 +1,30 @@
-import socket
+# server.py
 
-HOST = '223.227.125.27'                 # Symbolic name meaning all available interfaces
-PORT = 80              # Arbitrary non-privileged port
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind((HOST, PORT))
-s.listen(1)
-conn, addr = s.accept()
-print 'Connected by', addr
-while 1:
+import socket                   # Import socket module
+
+port = 80                    # Reserve a port for your service.
+s = socket.socket()             # Create a socket object
+host = socket.gethostname()     # Get local machine name
+s.bind((host, port))            # Bind to the port
+s.listen(5)                     # Now wait for client connection.
+
+print 'Server listening....'
+
+while True:
+    conn, addr = s.accept()     # Establish connection with client.
+    print 'Got connection from', addr
     data = conn.recv(1024)
-    if not data: break
-    conn.sendall(data)
-conn.close()
+    print('Server received', repr(data))
+
+    filename='mytext.txt'
+    f = open(filename,'rb')
+    l = f.read(1024)
+    while (l):
+       conn.send(l)
+       print('Sent ',repr(l))
+       l = f.read(1024)
+    f.close()
+
+    print('Done sending')
+    conn.send('Thank you for connecting')
+    conn.close()
