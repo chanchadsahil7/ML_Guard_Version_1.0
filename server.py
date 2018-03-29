@@ -16,7 +16,7 @@ while True:
     data = conn.recv(1024)
     print('Server received', repr(data))
 
-    filename='mytext.txt'
+    filename='my.txt'
     f = open(filename,'rb')
     l = f.read(1024)
     while (l):
