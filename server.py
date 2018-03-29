@@ -24,9 +24,11 @@ while True:
        conn.send(l)
        print('Sent ',repr(l))
        l = f.read(1024)
+    f.close()
     #filename = "images2/" + strftime("%Y-%m-%d %H:%M:%S", gmtime()) + ".jpg"
     #f = open(filename,'wb')
     #data = s.recv(1024)
+    f = open(filename,'wb')
     f.write(data)
     print("File saved")
     f.close()
