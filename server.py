@@ -4,7 +4,7 @@ import socket                   # Import socket module
 
 port = 8000                    # Reserve a port for your service.
 s = socket.socket()             # Create a socket object
-host = 107.180.71.58     # Get local machine name
+host = '107.180.71.58'     # Get local machine name
 s.bind((host, port))            # Bind to the port
 s.listen(5)                     # Now wait for client connection.
 print(socket.gethostname())
