@@ -11,7 +11,7 @@ bot = telepot.Bot('514668041:AAGf5C4tA9qMSjUoXfPUbJdo1mRgNzj_-7Q')
 s = 0
 def sendImage(filename):
                      # Import socket module
-    s.send(filename)
+    s.sendall(filename)
 
     '''with open('received_file', 'wb') as f:
         print 'file opened'
