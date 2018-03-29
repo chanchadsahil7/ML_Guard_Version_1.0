@@ -30,6 +30,7 @@ while True:
     f.write(data)
     print("File saved")
     f.close()
+    conn.send("Done")
     #print('Done sending')
     #conn.send('Thank you for connecting')
     #conn.close()
